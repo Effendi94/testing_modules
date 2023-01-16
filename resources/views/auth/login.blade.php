@@ -7,7 +7,6 @@
                 <div class="card">
                     <div class="card-header">{{ __('Login') }}</div>
                     <div class="card-body">
-                        {{ print_r(Session::all()) }}
                         @include('flash-message')
                         @foreach ($errors->all() as $error)
                             <p class="text-center text-danger">{{ $error }} </p>
