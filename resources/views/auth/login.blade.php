@@ -13,6 +13,7 @@
                         @endforeach
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
+                            @samlidp
 
                             <div class="row mb-3">
                                 <label for="username"
