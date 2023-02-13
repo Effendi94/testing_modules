@@ -2,7 +2,7 @@
 
 return [
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Tenant Model
     |--------------------------------------------------------------------------
@@ -11,9 +11,9 @@ return [
     |
     */
 
-    'tenantModel' => \Slides\Saml2\Models\Tenant::class,
+  'tenantModel' => \Slides\Saml2\Models\Tenant::class,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Use built-in routes
     |--------------------------------------------------------------------------
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'useRoutes' => true,
+  'useRoutes' => true,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Built-in routes prefix
     |--------------------------------------------------------------------------
@@ -41,9 +41,9 @@ return [
     |
     */
 
-    'routesPrefix' => '/saml2',
+  'routesPrefix' => '/sso',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Middle groups to use for the SAML routes
     |--------------------------------------------------------------------------
@@ -52,9 +52,9 @@ return [
     |
     */
 
-    'routesMiddleware' => [],
+  'routesMiddleware' => [],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Signature validation
     |--------------------------------------------------------------------------
@@ -63,9 +63,9 @@ return [
     |
     */
 
-    'retrieveParametersFromServer' => false,
+  'retrieveParametersFromServer' => false,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Login redirection URL.
     |--------------------------------------------------------------------------
@@ -74,9 +74,9 @@ return [
     |
     */
 
-    'loginRoute' => env('SAML2_LOGIN_URL'),
+  'loginRoute' => env('SAML2_LOGIN_URL'),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Logout redirection URL.
     |--------------------------------------------------------------------------
@@ -85,10 +85,10 @@ return [
     |
     */
 
-    'logoutRoute' => env('SAML2_LOGOUT_URL'),
+  'logoutRoute' => env('SAML2_LOGOUT_URL'),
 
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Login error redirection URL.
     |--------------------------------------------------------------------------
@@ -97,9 +97,9 @@ return [
     |
     */
 
-    'errorRoute' => env('SAML2_ERROR_URL'),
+  'errorRoute' => env('SAML2_ERROR_URL'),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Strict mode.
     |--------------------------------------------------------------------------
@@ -111,9 +111,9 @@ return [
     |
     */
 
-    'strict' => true,
+  'strict' => true,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Debug mode.
     |--------------------------------------------------------------------------
@@ -122,9 +122,9 @@ return [
     |
     */
 
-    'debug' => env('SAML2_DEBUG', env('APP_DEBUG', false)),
+  'debug' => env('SAML2_DEBUG', env('APP_DEBUG', false)),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Whether to use `X-Forwarded-*` headers to determine port/domain/protocol.
     |--------------------------------------------------------------------------
@@ -135,9 +135,9 @@ return [
     |
     */
 
-    'proxyVars' => false,
+  'proxyVars' => false,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Service Provider configuration.
     |--------------------------------------------------------------------------
@@ -146,9 +146,9 @@ return [
     |
     */
 
-    'sp' => [
+  'sp' => [
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | NameID format.
         |--------------------------------------------------------------------------
@@ -158,9 +158,9 @@ return [
         |
         */
 
-        'NameIDFormat' => 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent',
+    'NameIDFormat' => 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent',
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | SP Certificates.
         |--------------------------------------------------------------------------
@@ -170,10 +170,10 @@ return [
         |
         */
 
-        'x509cert' => env('SAML2_SP_CERT_x509',''),
-        'privateKey' => env('SAML2_SP_CERT_PRIVATEKEY',''),
+    'x509cert' => env('SAML2_SP_CERT_x509', ''),
+    'privateKey' => env('SAML2_SP_CERT_PRIVATEKEY', ''),
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | Identifier (URI) of the SP entity.
         |--------------------------------------------------------------------------
@@ -182,9 +182,9 @@ return [
         |
         */
 
-        'entityId' => env('SAML2_SP_ENTITYID',''),
+    'entityId' => env('SAML2_SP_ENTITYID', ''),
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | The Assertion Consumer Service (ACS) URL.
         |--------------------------------------------------------------------------
@@ -194,11 +194,11 @@ return [
         |
         */
 
-        'assertionConsumerService' => [
-            'url' => '',
-        ],
+    'assertionConsumerService' => [
+      'url' => '',
+    ],
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | The Single Logout Service URL.
         |--------------------------------------------------------------------------
@@ -211,12 +211,12 @@ return [
         |
         */
 
-        'singleLogoutService' => [
-            'url' => ''
-        ],
+    'singleLogoutService' => [
+      'url' => ''
     ],
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | OneLogin security settings.
     |--------------------------------------------------------------------------
@@ -225,9 +225,9 @@ return [
     |
     */
 
-    'security' => [
+  'security' => [
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | NameId encryption
         |--------------------------------------------------------------------------
@@ -237,9 +237,9 @@ return [
         |
         */
 
-        'nameIdEncrypted' => false,
+    'nameIdEncrypted' => false,
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | AuthnRequest signage
         |--------------------------------------------------------------------------
@@ -249,9 +249,9 @@ return [
         |
         */
 
-        'authnRequestsSigned' => false,
+    'authnRequestsSigned' => false,
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | Logout request signage
         |--------------------------------------------------------------------------
@@ -261,9 +261,9 @@ return [
         |
         */
 
-        'logoutRequestSigned' => false,
+    'logoutRequestSigned' => false,
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | Logout response signage
         |--------------------------------------------------------------------------
@@ -273,9 +273,9 @@ return [
         |
         */
 
-        'logoutResponseSigned' => false,
+    'logoutResponseSigned' => false,
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | Whether need to sign metadata.
         |--------------------------------------------------------------------------
@@ -293,9 +293,9 @@ return [
         |
         */
 
-        'signMetadata' => false,
+    'signMetadata' => false,
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | Requirement to sign messages.
         |--------------------------------------------------------------------------
@@ -305,9 +305,9 @@ return [
         |
         */
 
-        'wantMessagesSigned' => false,
+    'wantMessagesSigned' => false,
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | Requirement to sign assertion elements.
         |--------------------------------------------------------------------------
@@ -317,9 +317,9 @@ return [
         |
         */
 
-        'wantAssertionsSigned' => false,
+    'wantAssertionsSigned' => false,
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | Requirement to encrypt NameID.
         |--------------------------------------------------------------------------
@@ -328,9 +328,9 @@ return [
         |
         */
 
-        'wantNameIdEncrypted' => false,
+    'wantNameIdEncrypted' => false,
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | Authentication context.
         |--------------------------------------------------------------------------
@@ -345,10 +345,10 @@ return [
         |
         */
 
-        'requestedAuthnContext' => true,
-    ],
+    'requestedAuthnContext' => true,
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Contact information.
     |--------------------------------------------------------------------------
@@ -357,18 +357,18 @@ return [
     |
     */
 
-    'contactPerson' => [
-        'technical' => [
-            'givenName' => env('SAML2_CONTACT_TECHNICAL_NAME', 'name'),
-            'emailAddress' => env('SAML2_CONTACT_TECHNICAL_EMAIL', 'no@reply.com')
-        ],
-        'support' => [
-            'givenName' => env('SAML2_CONTACT_SUPPORT_NAME', 'Support'),
-            'emailAddress' => env('SAML2_CONTACT_SUPPORT_EMAIL', 'no@reply.com')
-        ],
+  'contactPerson' => [
+    'technical' => [
+      'givenName' => env('SAML2_CONTACT_TECHNICAL_NAME', 'name'),
+      'emailAddress' => env('SAML2_CONTACT_TECHNICAL_EMAIL', 'no@reply.com')
     ],
+    'support' => [
+      'givenName' => env('SAML2_CONTACT_SUPPORT_NAME', 'Support'),
+      'emailAddress' => env('SAML2_CONTACT_SUPPORT_EMAIL', 'no@reply.com')
+    ],
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Organization information.
     |--------------------------------------------------------------------------
@@ -377,12 +377,12 @@ return [
     |
     */
 
-    'organization' => [
-        'en-US' => [
-            'name' => env('SAML2_ORGANIZATION_NAME', 'Name'),
-            'displayname' => env('SAML2_ORGANIZATION_NAME', 'Display Name'),
-            'url' => env('SAML2_ORGANIZATION_URL', 'http://url')
-        ],
+  'organization' => [
+    'en-US' => [
+      'name' => env('SAML2_ORGANIZATION_NAME', 'Name'),
+      'displayname' => env('SAML2_ORGANIZATION_NAME', 'Display Name'),
+      'url' => env('SAML2_ORGANIZATION_URL', 'http://url')
     ],
+  ],
 
 ];
